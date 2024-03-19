@@ -1,11 +1,18 @@
-import { memberApi } from "../axios/api";
+import { userApi } from "../axios/api";
 
 import { AuthHeader } from "./Cookie";
 
-const userHeaders = AuthHeader();
+const headers = AuthHeader();
 
-export const memberLogin = async (user) => await memberApi.post('',user);
+// 로그인한 유저정보가 필요할 때
+export const findLoginUser = async (userId) => await userApi.get(`/${userId}`, headers);
 
-export const emailDuplicateCheck = async (email) => await memberApi.get(``);
+export const registerMember = async (user) => await userApi.post('',user);
 
-export const registerMember = async (user) => await memberApi.post('',user);
+export const memberLogin = async (user) => await userApi.post('',user);
+
+export const emailDuplicateCheck = async (email) => await userApi.get(``, email);
+
+export const sendEmailAuthCode = async (email) => await userApi.post('', email);
+
+export const authCodeCheck = async(emailCode) => await userApi.get('', emailCode);
