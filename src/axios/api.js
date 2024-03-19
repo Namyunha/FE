@@ -9,6 +9,11 @@ export const AuthHeader = () => {
     return headers
 }
 
-export const memberApi = axios.create({
-    baseURL: `${process.env.REACT_APP_SERVER_URL}`,
+export const userApi = axios.create({
+    baseURL: `${process.env.REACT_APP_SERVER_URL}/user`,
+})
+
+
+export const itemApi = axios.create({
+    baseURL: `${process.env.REACT_APP_SERVER_URL}/item`,
 })
