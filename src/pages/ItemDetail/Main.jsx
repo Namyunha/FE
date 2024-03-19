@@ -1,5 +1,4 @@
 import React from 'react'
-import { findLoginUser } from '../../service/MemberService'
 
 function Main() {
   return (

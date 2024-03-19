@@ -1,5 +1,9 @@
 import React from 'react'
-import { findLoginUser } from '../../service/MemberService'
+import 
+{ 
+  registerItem,
+  updateItem 
+} from '../../service/itemService'
 
 function Main() {
   return (
